@@ -1,0 +1,576 @@
+/* Importación de Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Variables CSS para el tema disco */
+:root {
+  --disco-purple: #8b5cf6;
+  --disco-pink: #ec4899;
+  --disco-blue: #3b82f6;
+  --disco-green: #10b981;
+  --disco-yellow: #f59e0b;
+  --disco-dark: #111827;
+  --disco-gray: #1f2937;
+  --disco-light-gray: #374151;
+  --neon-glow: #ff00de;
+}
+
+/* Estilos base */
+body {
+  background-color: var(--disco-dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* Efectos de neón y disco */
+.neon-text {
+  text-shadow: 0 0 10px var(--neon-glow), 0 0 20px var(--neon-glow), 0 0 30px var(--neon-glow);
+  color: white !important;
+}
+
+.disco-text-glow {
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow-move 3s ease-in-out infinite;
+}
+
+@keyframes glow-move {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.disco-ball {
+  background: conic-gradient(from 0deg, var(--disco-purple), var(--disco-pink), var(--disco-blue), var(--disco-green), var(--disco-yellow), var(--disco-purple));
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Botones disco personalizados */
+.btn-disco {
+  background: linear-gradient(45deg, var(--disco-purple), var(--disco-pink));
+  border: none;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-disco:hover {
+  background: linear-gradient(45deg, #7c3aed, #db2777);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+  color: white;
+}
+
+.btn-disco-outline {
+  border: 2px solid var(--disco-purple);
+  color: var(--disco-purple);
+  background: transparent;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-disco-outline:hover {
+  background: var(--disco-purple);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Cards disco */
+.card-disco {
+  background: var(--disco-gray);
+  border: 1px solid var(--disco-light-gray);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-disco:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+/* Navbar disco */
+.navbar-disco {
+  background: var(--disco-gray) !important;
+  border-bottom: 2px solid var(--disco-purple);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-disco .navbar-brand {
+  color: white !important;
+  font-weight: bold;
+}
+
+.navbar-disco .nav-link {
+  color: #d1d5db !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-disco .nav-link:hover {
+  color: var(--disco-purple) !important;
+  text-shadow: 0 0 5px var(--disco-purple);
+}
+
+/* Formularios disco */
+.form-control-disco {
+  background: var(--disco-light-gray);
+  border: 1px solid #6b7280;
+  color: white;
+}
+
+.form-control-disco:focus {
+  background: var(--disco-light-gray);
+  border-color: var(--disco-purple);
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+  color: white;
+}
+
+.form-control-disco::placeholder {
+  color: #9ca3af;
+}
+
+/* Estilos para formularios y validación Bootstrap */
+.form-select.form-control-disco {
+  background-color: var(--disco-light-gray);
+  border: 1px solid #6b7280;
+  color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  padding-right: 2.25rem;
+}
+
+.form-select.form-control-disco:focus {
+  background-color: var(--disco-light-gray);
+  border-color: var(--disco-purple);
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+  color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select.form-control-disco option {
+  background-color: var(--disco-light-gray);
+  color: white;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Gradientes */
+.disco-gradient {
+  background: linear-gradient(45deg, var(--disco-purple), var(--disco-pink));
+}
+
+.disco-gradient-bg {
+  background: linear-gradient(90deg, var(--disco-purple) 0%, var(--disco-pink) 100%);
+}
+
+/* Estilos específicos para BlogPost */
+.hover\:opacity-100:hover {
+  opacity: 1 !important;
+}
+
+.alert-success {
+  background-color: rgba(16, 185, 129, 0.2);
+  border-color: var(--disco-green);
+  color: var(--disco-green);
+}
+
+.alert-danger {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.lh-lg {
+  line-height: 1.8;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.bg-opacity-25 {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Mejoras para el diseño responsivo */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .card-disco {
+    margin: 0.5rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Animaciones suaves */
+.card-disco,
+.btn-disco,
+.form-control-disco {
+  transition: all 0.3s ease;
+}
+
+.btn-disco:hover {
+  transform: translateY(-2px);
+}
+
+.card-disco:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilos para iconos Bootstrap */
+.bi {
+  vertical-align: -0.125em;
+}
+
+/* Mejoras para la accesibilidad */
+.btn:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+}
+
+/* Utilidades adicionales */
+.text-light {
+  color: #f8f9fa !important;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
+
+.small {
+  font-size: 0.875em;
+}
+
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 1rem !important; }
+.gap-4 { gap: 1.5rem !important; }
+.gap-5 { gap: 2rem !important; }
+
+/* Mejoras para botones outline en tema oscuro */
+.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+/* Hover link personalizado */
+.hover-link:hover {
+  color: var(--disco-pink) !important;
+  text-decoration: underline !important;
+}
+
+/* Estilos para modal personalizado de galería */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Responsive para cards de galería */
+@media (max-width: 576px) {
+  .col-sm-6.col-md-4.col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .col-sm-6.col-md-4.col-lg-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Mejoras para iconos de redes sociales */
+.btn i {
+  font-size: 1.2rem;
+}
+
+/* Estilos para card headers */
+.card-header {
+  border-bottom: 1px solid var(--disco-light-gray);
+}
+
+/* Animación suave para efectos hover en imágenes */
+img {
+  transition: transform 0.3s ease;
+}
+
+/* Mejoras para spacing en elementos flex */
+.d-flex.gap-2 { gap: 0.5rem !important; }
+.d-flex.gap-3 { gap: 1rem !important; }
+.d-flex.gap-4 { gap: 1.5rem !important; }
+.d-flex.gap-5 { gap: 3rem !important; }
+
+/* Hover effects para componentes */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3) !important;
+}
+
+.hover-text-disco:hover {
+  color: var(--disco-pink) !important;
+  transition: color 0.3s ease;
+}
+
+.hover-text-success:hover {
+  color: var(--disco-green) !important;
+  transition: color 0.3s ease;
+}
+
+.hover-text-info:hover {
+  color: var(--disco-blue) !important;
+  transition: color 0.3s ease;
+}
+
+.hover-text-primary:hover {
+  color: #0d6efd !important;
+  transition: color 0.3s ease;
+}
+
+.hover-text-disco-pink:hover {
+  color: var(--disco-pink) !important;
+  transition: color 0.3s ease;
+}
+
+.hover-text-danger:hover {
+  color: #dc3545 !important;
+  transition: color 0.3s ease;
+}
+
+/* Animaciones adicionales */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Estilos adicionales consolidados de App.css */
+
+/* Botón con gradiente animado */
+.gradient-button {
+  background: linear-gradient(45deg, var(--disco-purple), var(--disco-pink));
+  transition: all 0.3s ease;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(45deg, #7c3aed, #db2777);
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Efectos hover simples para tarjetas */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de línea de corte para texto */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Estilos específicos para el blog */
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a78bfa;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.blog-content strong {
+  font-weight: bold;
+  color: #a78bfa;
+}
+
+.blog-content em {
+  font-style: italic;
+  color: #c4b5fd;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+  color: #d1d5db;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+  color: #d1d5db;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid var(--disco-purple);
+  padding-left: 1rem;
+  font-style: italic;
+  color: #c4b5fd;
+  background-color: var(--disco-gray);
+  padding: 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+/* Utilidades de colores de texto disco */
+.text-disco-purple { color: var(--disco-purple) !important; }
+.text-disco-pink { color: var(--disco-pink) !important; }
+.text-disco-blue { color: var(--disco-blue) !important; }
+.text-disco-green { color: var(--disco-green) !important; }
+.text-disco-yellow { color: var(--disco-yellow) !important; }
+
+/* Utilidades de colores de fondo disco */
+.bg-disco-dark { background-color: var(--disco-dark) !important; }
+.bg-disco-gray { background-color: var(--disco-gray) !important; }
+.bg-disco-light-gray { background-color: var(--disco-light-gray) !important; }
+.bg-disco-purple { background-color: var(--disco-purple) !important; }
+.bg-disco-pink { background-color: var(--disco-pink) !important; }
+
+/* Estilos específicos para la galería */
+.gallery-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  background-color: var(--disco-gray);
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.gallery-card:hover .gallery-overlay {
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+}
+
+.gallery-overlay-content {
+  color: white;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay-content {
+  transform: translateY(0);
+}
+
+/* Estilos para cuando las imágenes no cargan */
+.image-placeholder {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(45deg, var(--disco-purple), var(--disco-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+/* Mejoras para el modal de imagen */
+.modal-image {
+  max-height: 80vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
